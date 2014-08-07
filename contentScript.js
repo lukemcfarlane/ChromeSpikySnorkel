@@ -18,7 +18,7 @@ if(showMoreEl.size() === 1) {
 
 $('div.pShowMore a:first-child').each(function() {
     var oldHrefDecoded = decodeURIComponent($(this).attr('href'));
-    var matchArr = oldHrefDecoded.match(/(javascript:showMoreList\('\/.{15}', ')(.*)(',.*)/);
+    var matchArr = oldHrefDecoded.match(/(javascript:showMoreList\('\/.*', ')(.*)(',.*)/);
     var oldURL = matchArr[2];
     var newURL = oldURL.replace(/rowsperlist=\d+/, 'rowsperlist=1000'); 
     var newURLEncoded = encodeURIComponent(newURL);
