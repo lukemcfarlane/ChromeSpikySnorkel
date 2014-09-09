@@ -9,7 +9,7 @@
 	],
 	"content_scripts": [{
 		"matches": ["https://*.salesforce.com/*", "https://*.force.com/*"],
-		"js": ["jquery-2.1.1.min.js", "contentScript.js"],
+		"js": ["jquery-2.1.1.min.js", "underscore.min.js", "contentScript.js"],
 		"run_at": "document_end"
 		// "run_at": "document_start"
 		// "run_at": "document_idle"
