@@ -8,6 +8,7 @@ Tweaks
 
 * Turns "Show more" links into "Show all", e.g. to show all records in a related list.
 * Moves Developer Console link out of dropdown menu and into the nav links at the top right-hand corner of page.
+* Sorts all select lists alphabetically (case insensitive)
 
 Installation
 ------------

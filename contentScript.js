@@ -43,3 +43,30 @@ try {
 } catch (err) {
 	console.log('Spiky Snorkel: \'nav links\' tweak failed', err);
 }
+
+
+try {
+    $('select').each(function() {
+        var select = $(this);
+        var optionsArr = [];
+        var emptyOpt = null;
+        $('option', select).each(function() {
+            if($(this).text().indexOf('--') !== -1) { 
+                emptyOpt = $(this);
+            } else {
+                optionsArr.push($(this));
+            }
+        });
+
+        optionsArr = _.sortBy(optionsArr, function(opt) {
+            return opt.text().toLowerCase();
+        });
+
+        $(this).empty();
+
+        $(this).append(emptyOpt);
+        $(this).append(optionsArr);
+    });
+} catch (err) {
+    console.log('Spiky Snorkel: \'sort select lists\' tweak failed', err);
+}
