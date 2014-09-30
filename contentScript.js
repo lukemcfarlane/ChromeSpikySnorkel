@@ -70,3 +70,38 @@ try {
 } catch (err) {
     console.log('Spiky Snorkel: \'sort select lists\' tweak failed', err);
 }
+
+try {
+    var match = document.cookie.match(/\bsid=([^;]+)/);
+    if (match) {
+      __sfdcSessionId = match[1];
+    }
+
+    $.ajax({
+        url: '/services/data',
+        headers: {
+            Authorization: 'Bearer ' + __sfdcSessionId
+        },
+        success: function(versionsArr) {
+            var latestVersion = null;
+            for(var i = 0; i < versionsArr.length; i++) {
+                var v = versionsArr[i];
+                if(latestVersion === null || parseFloat(v.version) > parseFloat(latestVersion.version)) {
+                    latestVersion = v;
+                }
+            }
+            var versionSpan = $('<span>')
+                .css({
+                    'font-weight': 'bold',
+                    'color': 'white',
+                    'margin-left': '4px'
+                })
+                .text(latestVersion.label + ' (' + latestVersion.version + ')');
+            $('.bPageHeader .phHeader td.left')
+                .append(versionSpan)
+                .css('padding-bottom', '2px');
+        }
+    });
+} catch (err) {
+    console.log('Spiky Snorkel: \'get Salesforce version\' tweak failed', err);
+}
