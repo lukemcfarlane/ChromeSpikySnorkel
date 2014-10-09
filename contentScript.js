@@ -6,7 +6,7 @@ try {
 	if (showMoreEl.size() === 1) {
 		var showAllURL = showMoreEl
 			.parent()
-			.attr('href') + '9999999';
+			.attr('href') + '0000';
 
 		var showAllLink = $('<a></a>');
 
