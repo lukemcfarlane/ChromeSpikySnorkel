@@ -11,6 +11,14 @@ Tweaks
 * Sorts all select lists alphabetically (case insensitive)
 * Shows the Salesforce version name & API version number under the Salesforce logo on top left-hand corner of page
 
+Why the name?
+-------------
+
+Look at this snorkel and tell me it isn't spiky:
+
+![Summer '14 Logo](https://raw.githubusercontent.com/lukemcfarlane/ChromeSpikySnorkel/master/images/spikysnorkel.png)
+
+
 Installation
 ------------
 
