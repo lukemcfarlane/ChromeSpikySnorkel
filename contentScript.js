@@ -39,6 +39,8 @@ try {
 try {
 	$('.navLinks .linkElements :contains(Help & Training)').hide()
 	var debugLogLink = $('a.debugLogLink');
+    debugLogLink.attr('href', '/_ui/common/apex/debug/ApexCSIPage');
+    debugLogLink.attr('target', '_blank');
 	$('.navLinks .linkElements').append(debugLogLink);
 } catch (err) {
 	console.log('Spiky Snorkel: \'nav links\' tweak failed', err);
