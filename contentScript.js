@@ -42,6 +42,16 @@ try {
     debugLogLink.attr('href', '/_ui/common/apex/debug/ApexCSIPage');
     debugLogLink.attr('target', '_blank');
 	$('.navLinks .linkElements').append(debugLogLink);
+
+    // Add a direct link to advanced user details:
+    var userDetailsLink = $('<a></a>');
+    userDetailsLink.addClass('menuButtonMenuLink');
+    userDetailsLink.attr('title', 'Advanced User Details');
+    // TODO: Find a way to get current user ID (can't access UserContext.userId from page
+    userDetailsLink.attr('href', 'userIdGoesHere' +
+                                    '?noredirect=1&setupid=AdvancedUserDetails');
+    userDetailsLink.text('Advanced User Details');
+    $('.navLinks .linkElements #userNavMenu').append(userDetailsLink);
 } catch (err) {
 	console.log('Spiky Snorkel: \'nav links\' tweak failed', err);
 }
